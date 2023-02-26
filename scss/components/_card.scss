@@ -1,0 +1,96 @@
+.serie {
+    text-decoration: none;
+    @include flexposition(column);
+    &:hover{
+        .genero-title{
+            color:color(quater-lighter);
+        }
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            .card-info {
+                transform: scaleX(1);
+            }
+            .card-text{
+                display:none;
+            }
+        }
+
+        &-img {
+            &-overlay {
+                @include flexposition(column, flex-end, flex-start);
+            }
+        }
+
+        &-text {
+            background-color: color(tertiary);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            opacity: 0.9;
+            @include flexposition(row, flex-start, center);
+            gap: 0.5rem;
+
+            i {
+                font-size: size(sm);
+            }
+        }
+
+        &-info {
+            color: color(quinquary);
+            line-height: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: color(tertiary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .2s ease-in-out;
+            opacity: 0.8;
+            align-items: center;
+            
+            h4 {
+                font-size: size(sm);
+                text-align: center;
+                font-weight: border;
+                margin-top: .5rem;
+            }
+
+
+            p {
+                @include flexposition();
+                gap: 1rem;
+                font-size: size(xs);
+                text-align: center;
+                font-weight: border;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                &:nth-child(2){
+                    justify-self: center;
+                }
+
+                i {
+                    font-size: size(sm);
+                }
+            }
+        }
+
+        img {
+            width: inherit;
+            height: inherit;
+            object-fit: fill;
+            display: flex;
+        }
+    }
+
+    h5 {
+        font-size: size(sm);
+        font-weight: width(black);
+        color: color(quater-darker);
+    }
+}

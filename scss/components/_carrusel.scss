@@ -1,0 +1,152 @@
+
+.carousel{
+    $scrollbarHeight: 4px;
+    $scrollbarColor : color(quaternary);
+    $carouselHeight : 15rem;
+    $fadeWidth      : 5rem;
+    $padding        : 8px;
+    $radius         : 8px;         
+    $bg             : color(secondary);
+
+    margin: auto auto;
+    max-width: 100%;
+    display: block; 
+    font-size: 0;
+    border-radius: $radius;
+    padding: $padding;
+    background: $bg;
+    transform: translateZ(0);  
+    height: $carouselHeight;
+    -webkit-overflow-scrolling:touch;
+  
+    .touch &{ overflow:auto; } /* for tablets */
+  
+    &[data-at*='left'] > .wrap{
+        &::before{ 
+          opacity:1;
+          text-indent:-50px; 
+      }
+    }
+    
+    &[data-at*='right'] > .wrap{
+        &::after{ 
+          opacity:1;
+          text-indent:-50px; 
+      }
+    }
+  
+    // scrollbar
+    &::after{  
+      content: '';
+      pointer-events:none;
+      position:absolute; 
+      z-index: 4;
+      bottom: -0.5rem; 
+      left: 0;
+      background: $scrollbarColor;
+      height: $scrollbarHeight;
+      border-radius: $scrollbarHeight;
+      opacity: 0;
+      width: var(--scrollWidth, 0);
+      left: var(--scrollLleft, 0);
+      transition: opacity .2s, bottom .2s;
+    }
+  
+    &:hover{  
+      &::after{ opacity:1; bottom:-10px; }
+    }
+  
+    > .wrap{ 
+      overflow:hidden;
+      border-radius: $radius - $padding/2;
+      
+      &::before, 
+      &::after{ 
+        content: '\2039'; 
+        opacity: 1; 
+        position: absolute; 
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        width: $fadeWidth;
+        line-height: $carouselHeight;
+        font-family: monospace;
+        color: #555;
+        font-weight: bold;
+        border-radius: $radius;
+        pointer-events: none;
+        transition: .2s ease-out; 
+        background:linear-gradient(to right, color(secondary) 20%, transparent); 
+      }
+  
+      &::after{ 
+        transform:rotate(180deg);
+        left: auto;
+        right:0; 
+      }
+  
+      > ul{ 
+        list-style:none; 
+        white-space:nowrap; 
+        height:$carouselHeight;
+        
+        
+        > li{ 
+          display:inline-block; 
+          vertical-align:middle; 
+          height:100%; 
+          margin:-1rem 0 0 .5rem; 
+          position:relative; 
+          overflow:hidden; 
+          transition:0.25s ease-out;
+          &:hover{ transform:scale(1.1); }
+            
+          div{
+            position:absolute; 
+            height:100%; 
+            width:100%; 
+            overflow:hidden; 
+            border-radius: $radius;
+            transition:0.25s ease-out;
+            &:hover{ transform:scale(1.1);}
+          }
+          
+          > img {
+            display: block;
+            height: inherit;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+            transition: 1s ease;
+  
+            &::after {
+              content: '';
+              position: absolute;
+              z-index: 2;
+            }
+          }
+  
+          > div {
+            font-size: size(xxs);
+            position: absolute;
+            z-index: 3;
+            top: 120%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            color: color(quinquary);
+            background-color: color(tertiary);
+            opacity: 0.8;
+            transition: opacity 0.25s ease-out;
+            pointer-events: none;
+            padding: 0.5rem;
+          }
+  
+          // &:hover > div {
+          //   opacity: 1;
+          // }
+        }
+      }
+    }
+  }

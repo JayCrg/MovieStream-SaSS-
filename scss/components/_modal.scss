@@ -1,0 +1,8 @@
+.modal{
+    &-header{
+        background-color: color(primary);
+        h1{
+            font-weight: weight(bold);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.detalle{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    margin-top:0rem;
+    @include gridposition(repeat(4, 1fr), repeat(2, minmax(min-content, 1fr)));
+    &-cabecera{
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        background-color: color(tertiary);
+        padding: 1rem;
+        color: color(secondary);
+        @include gridposition(repeat(3, 1fr), repeat(5, minmax(min-content, 1fr)));
+    }
+    &-titulo{
+        font-size: size(xxl);
+        font-weight: weight(bold);
+        color: color(secondary);
+        @include responsive(mobile){
+            text-align:center;
+            font-size: size(xl);
+            grid-column: 2 / 3;
+            grid-row: 3 /4;
+        }
+        @include responsive(tablet){
+            font-size: size(xl);
+            grid-column: 3 / 4;
+            grid-row: 1 /2;
+        }
+        @include responsive(desktop){
+            font-size: size(xl);
+            grid-column: 3 / 5;
+            grid-row: 1 /2;
+        }
+    }
+    &-score{
+        font-size: size(xs);
+        font-weight: weight(bold);
+        color: color(secondary);
+        text-align:center;
+        @include responsive(mobile){
+            grid-column: 2 / 3;
+            grid-row: 2 /3;
+        }
+        @include responsive(tablet){
+            grid-column: 3 / 4;
+            grid-row: 2 /3;
+        }
+        @include responsive(desktop){
+            grid-column: 5 / 6;
+            grid-row: 1 /2;
+        }
+    }
+}

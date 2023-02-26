@@ -1,0 +1,98 @@
+/*diferenciar entre tamaños*/
+///mixin responsive para diferentes tamaños
+///@example
+/// .footer{
+///     @include resposive(mobile){
+///        font-size: 1rem;
+///     }
+///    @include resposive(tablet){
+///       font-size: 1.5rem;
+///     }
+/// }
+///@param {string} $breakpoint -tamaño de la pantalla
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint ==tiny {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+    @if $breakpoint ==mobile {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==desktop {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+}
+/*posicionar en flex*/
+///mixin de posicionamiento en flex
+///@example
+/// .footer{
+///     @include flexposition();
+/// }
+///@param {string} $direction [row] -direccion de los elementos
+///@param {string} $justifycontenet [cneter] -justificacion de los elementos
+///@param {string} $alignitem [center] -alineacion de los elementos
+@mixin flexposition($direction: row, $justifycontenet: center, $alignitem: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontenet;
+    align-items: $alignitem;
+}
+
+/*posicionar en flex*/
+///mixin de posicionamiento en flex
+///@example
+/// .footer{
+///     @include gridposition();
+/// }
+///@param {string} $direction [row] -direccion de los elementos
+///@param {string} $justifycontenet [cneter] -justificacion de los elementos
+///@param {string} $alignitem [center] -alineacion de los elementos
+@mixin gridposition($rows: 1fr, $columns: 1fr, $gap: 1rem) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $columns;
+    grid-gap: $gap;
+}
+
+/*placeholder para poner sombra y ampliar en hover*/
+///mixin para poner sombra y ampliar al hacer hover
+///@example
+/// .card{
+///    @extend %sombra;
+/// }
+%sombra{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+}
+
+/*funcion que cambia el color de la letra en funcion del color del texto*/
+///funcion que cambia el color de la letra en funcion del color del texto
+///@example
+/// .card{
+///   color: color-texto($background-color);
+/// }
+///@param {string} $color -color del background
+///@return {color} -color del texto
+@function color-texto($color) {
+    @if (lightness($color) >50) {
+        @return color(primary);
+    } @else {
+        @return white;
+    }
+  }

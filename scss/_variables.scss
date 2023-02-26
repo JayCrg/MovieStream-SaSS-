@@ -1,0 +1,73 @@
+////Proyecto: Act1
+/// @author: Juan Carlos Ramírez
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@500&display=swap');
+
+/*paleta de colores*/
+///mapa de colores
+///@group colores
+
+$color: (
+    primary: #cd9afa,
+    secondary: #d6fbfc,
+    tertiary: #0b041b,
+    quaternary: #3653C0,
+    quater-lighter: #466af0,
+    quater-darker: #1a2e8a,
+    quinquary: #d7fafc,
+    reddish: #c43a3a,
+);
+///Funcion para obtener el color
+///@group colores
+///@param {string} $colorName - nombre del color
+///@return {color} - color
+@function color($colorName){
+    @return map-get($color, $colorName);
+}
+
+///mapa de tamaños
+///@group tamaños
+$font-sizes:(
+    xxl:6rem,
+    xl: 3rem,
+    lg: 2.5rem,
+    md: 2rem,
+    sm: 1.7rem,
+    xs: 1.3rem,
+    xxs: 1rem,
+    );
+///@group tamaños
+///@param {map} $font-sizes - mapa de tamaños
+///tamaños disponibles xxl, xl, lg, md, sm, xs
+///@return {size} - tamaño
+@function size($fontSizeName){
+    @return map-get($font-sizes, $fontSizeName);
+}
+///mapa de pesos
+///@group pesos
+$font-weights:(
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900
+);
+///@group pesos
+///@param {map} $font-weights - mapa de tamaños
+///tamaños disponibles light, regular, medium, bold, black
+///@return {weight} - peso
+@function weight($fontWeightName){
+    @return map-get($font-weights, $fontWeightName);
+}
+///
+$font-family: "Josefin Sans", sans-serif;
+///
+$font-title: "Phudu", sans-serif;
+/// 
+$defaul-margin: 0;
+$default-padding: 0;
+///
+$separador-margin: 0.5rem 0 0 0;
+///
+$default-foreground: rgb(30,30,30);

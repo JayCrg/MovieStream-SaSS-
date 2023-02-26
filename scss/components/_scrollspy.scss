@@ -1,0 +1,53 @@
+
+.row{
+    &-scrollspy{
+        height: 98vh;
+        overflow: auto;
+        background-color: white;
+    }
+    &-frame{
+        @extend %sombra;
+        background-color: white;
+
+    }
+    &-navHeader{
+        @include responsive($breakpoint: tablet){
+            height: 50vh;
+        }
+        @include responsive($breakpoint: desktop){
+            height: 100vh;
+        }
+        overflow: auto;
+        nav{
+            .nav{
+                &-link{
+                    font-size: size(xs);
+                    color: color(quaternary);
+                    &:active{
+                        color: color(primary);
+                    }
+                    &:hover{
+                        color: color(quater-darker);
+                        background-color: color(primary);
+                    }
+
+                }
+                &-titulo{
+                    @include responsive($breakpoint: mobile){
+                        font-size: size(sm)
+                    }
+                    @include responsive($breakpoint: tablet){
+                        font-size: size(sm);
+                    }
+                    @include responsive($breakpoint: desktop){
+                        font-size: size(md);
+                    }
+                    &:active{
+                        color: color(primary);
+                    }
+                }
+            }
+        }
+    }  
+
+}
