@@ -34,6 +34,11 @@
             @content;
         }
     }
+    @else if $breakpoint ==large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
 }
 /*posicionar en flex*/
 ///mixin de posicionamiento en flex
@@ -96,3 +101,20 @@
         @return white;
     }
   }
+
+/*posicionar una imagen en un contenedor*/
+///mixin de posicionamiento una imagen en un contenedor
+///@example
+/// .footer{
+///     @include displayImg();
+/// }
+///@param {string} $width [inherit] -ancho de la imagen
+///@param {string} $height [inherit] -alto de la imagen
+///@param {string} $object-fit [fill] -object-fit de la imagen
+/// @param {string} $display [flex] -display de la imagen
+@mixin displayImg($width: inherit, $height: inherit, $object-fit: fill, $display: flex) {
+    width: inherit;
+    height: inherit;
+    object-fit: fill;
+    display: flex;
+}

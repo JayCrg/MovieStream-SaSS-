@@ -1,4 +1,4 @@
-
+///Component: Carrusel
 .carousel{
     $scrollbarHeight: 4px;
     $scrollbarColor : color(quaternary);
@@ -35,7 +35,7 @@
       }
     }
   
-    // scrollbar
+    ///Scrollbar
     &::after{  
       content: '';
       pointer-events:none;
@@ -142,10 +142,6 @@
             pointer-events: none;
             padding: 0.5rem;
           }
-  
-          // &:hover > div {
-          //   opacity: 1;
-          // }
         }
       }
     }

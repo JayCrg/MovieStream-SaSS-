@@ -110,9 +110,11 @@ HoverCarousel.prototype = {
 }
            
              
-  var carouselElm = document.querySelector('.primero')
-  var carouselElm2 = document.querySelector('.segundo')
-  var carousel = document.querySelector('.tercero')
-  new HoverCarousel(carouselElm)  
+var carouselElm = document.querySelector('.primero')
+var carouselElm2 = document.querySelector('.segundo')
+var carousel = document.querySelector('.tercero')
+var carousel4 = document.querySelector('.cuarto')
+new HoverCarousel(carouselElm)  
 new HoverCarousel(carouselElm2)
-new HoverCarousel(carousel)                        
+new HoverCarousel(carousel)        
+new HoverCarousel(carousel4)                

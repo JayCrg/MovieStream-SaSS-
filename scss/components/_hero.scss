@@ -1,5 +1,4 @@
-//Cards Carousel
-
+///Cards Carousel
 .icon-cards {
     margin: auto;
     position: relative;
@@ -10,8 +9,7 @@
     perspective: 30rem;
     transform-origin: center;
 
-//Esto es lo que hace que rote 
-
+///Esto es lo que hace que rote 
     &-content {
         position: absolute;
         width: 100%;
@@ -26,8 +24,7 @@
         }
     }
 
-    //Cards individuales
-
+    ///Cards individuales
     &-item {
         position: absolute;
         top: 0;
@@ -64,8 +61,7 @@
     }
 }
 
-//Animacion del carrusel
-
+///Animacion del carrusel
 @keyframes carousel {
 
     0%,

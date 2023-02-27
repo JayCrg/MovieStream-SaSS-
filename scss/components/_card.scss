@@ -1,3 +1,4 @@
+///Componente de card
 .serie {
     text-decoration: none;
     @include flexposition(column);
@@ -65,7 +66,7 @@
             p {
                 @include flexposition();
                 gap: 1rem;
-                font-size: size(xs);
+                font-size: size(xxs);
                 text-align: center;
                 font-weight: border;
                 margin-left: 0.5rem;
@@ -81,10 +82,7 @@
         }
 
         img {
-            width: inherit;
-            height: inherit;
-            object-fit: fill;
-            display: flex;
+            @include displayImg();
         }
     }
 
