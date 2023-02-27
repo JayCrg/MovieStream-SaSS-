@@ -35,7 +35,7 @@ function compile(){
 
 
 var doc_options = {
-    dest: "docs",
+    dest: "doc",
 };
 
 

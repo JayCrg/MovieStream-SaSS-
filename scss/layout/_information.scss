@@ -1,0 +1,6 @@
+.information{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    @include gridposition((1fr,1fr), 1fr);
+    
+}
